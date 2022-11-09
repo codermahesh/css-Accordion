@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e7f3f9;
+}
+
+main h1{
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.accordion{
+    max-width: min(100% - 10px,600px);
+    margin-inline: auto;
+    padding: 0;
+}
+
+.accordion li{
+    list-style: none;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #303030;
+    box-shadow: 6px 6px 10px -1px rgb(0 0 0 /15%),-6px -6px 10px -1px rgb(47 42 42 /24%);
+}
+
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+}
+
+.accordion li label::before{
+    content: " + ";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.accordion li input[type="radio"]{
+    display: none;
+}
+.accordion .content {
+    /* padding: 0 10px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.accordion .content p{
+    color: #fff;
+    margin: 0;
+    line-height: 26px;
+}
+
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 400px;
+    padding: 10px 20px;
+}
+
+.accordion input[type="radio"]:checked + label::before{
+    content: " -";
+}
